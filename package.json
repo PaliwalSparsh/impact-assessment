@@ -1,5 +1,5 @@
 {
-  "name": "react-native-web-starter",
+  "name": "docstat-native-web",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,7 +21,9 @@
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
     "test-native": "node node_modules/jest/bin/jest.js --watch",
-    "test": "yarn run test-web && yarn run test-native"
+    "test": "yarn run test-web && yarn run test-native",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "jest": {
     "preset": "jest-expo"
@@ -33,6 +35,9 @@
     "flow-bin": "^0.66.0",
     "jest-expo": "^25.1.0",
     "react-native-scripts": "^1.11.1",
-    "react-test-renderer": "16.2.0"
+    "react-test-renderer": "16.2.0",
+    "@storybook/react": "^3.3.15",
+    "@storybook/addon-actions": "^3.3.15",
+    "@storybook/addon-links": "^3.3.15"
   }
 }
