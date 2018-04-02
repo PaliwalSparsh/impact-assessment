@@ -1,13 +1,19 @@
-import React from 'react'
-import { View, Text, Animated, StyleSheet, StatusBar } from 'react-native'
+// @flow
 
-export default class App extends React.Component {
-    constructor(props) {
+import * as React from 'react';
+import { View, Text, Animated, StyleSheet, StatusBar } from 'react-native';
+
+type Props = {};
+
+export default class App extends React.Component<Props, void> {
+    imageAnimation:any;
+
+    constructor(props:Props) {
         super(props)
 
         this.imageAnimation = new Animated.Value(0);
     }
-    
+
     componentDidMount() {
         Animated.loop(
           Animated.timing(this.imageAnimation, {
@@ -20,7 +26,7 @@ export default class App extends React.Component {
     }
 
     render() {
-        const rotationStyle = { transform: [{
+        const rotationStyle:any = { transform: [{
             rotate: this.imageAnimation.interpolate({
                 inputRange: [0, 1],
                 outputRange: ['0deg', '360deg']
@@ -30,10 +36,10 @@ export default class App extends React.Component {
         return (
             <View style={styles.app}>
                 <View style={styles.appHeader}>
-                    <Animated.Image 
-                        style={[styles.headerImage, rotationStyle]} 
-                        resizeMode={'contain'} 
-                        source={require('./assets/react-logo.png')} 
+                    <Animated.Image
+                        style={[styles.headerImage, rotationStyle]}
+                        resizeMode={'contain'}
+                        source={require('./assets/react-logo.png')}
                     />
                     <Text style={styles.appTitle}>Welcome to React Native Web️</Text>
                 </View>

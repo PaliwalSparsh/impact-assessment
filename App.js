@@ -1,3 +1,4 @@
+// Entry point for Native App
 import React from 'react'
 import HybridApp from './src/App'
 

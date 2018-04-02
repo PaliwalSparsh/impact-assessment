@@ -36,8 +36,17 @@
 <PROJECT_ROOT>/node_modules/xdl/.*
 <PROJECT_ROOT>/node_modules/reqwest/.*
 <PROJECT_ROOT>/node_modules/metro-bundler/.*
+<PROJECT_ROOT>/node_modules/immutable/.*
+<PROJECT_ROOT>/node_modules/metro/.*
+<PROJECT_ROOT>/node_modules/expo/.*
+<PROJECT_ROOT>/node_modules/radium/.*
+<PROJECT_ROOT>/node_modules/react-native-web/.*
+<PROJECT_ROOT>/node_modules/react-scripts/.*
 
 [include]
+
+[untyped]
+<PROJECT_ROOT>/node_modules/react-native
 
 [libs]
 node_modules/react-native/Libraries/react-native/react-native-interface.js
@@ -72,4 +81,4 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
 unsafe.enable_getters_and_setters=true
 
 [version]
-^0.56.0
+0.61.0
