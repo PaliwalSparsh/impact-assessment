@@ -1,80 +1,58 @@
 // @flow
-
 import * as React from 'react';
-import { View, Text, Animated, StyleSheet, StatusBar } from 'react-native';
+import {addNavigationHelpers} from 'react-navigation';
+import {connect, Provider} from 'react-redux';
+import {createReduxBoundAddListener, createReactNavigationReduxMiddleware,
+} from 'react-navigation-redux-helpers';
+import type { MapStateToProps } from "react-redux"
+import TabNavigator from './navigation/TabNav';
+import getStore from './store';
+import navReducer from './reducers/navReducer';
 
-type Props = {};
+// From react-navigation docs
+const middleware = createReactNavigationReduxMiddleware(
+  "root",
+  state => state.nav,
+);
+const addListener = createReduxBoundAddListener("root");
 
-export default class App extends React.Component<Props, void> {
-    imageAnimation:any;
+// App component
+type Props = {
+  dispatch: any,
+  nav: any
+};
 
-    constructor(props:Props) {
-        super(props)
-
-        this.imageAnimation = new Animated.Value(0);
-    }
-
-    componentDidMount() {
-        Animated.loop(
-          Animated.timing(this.imageAnimation, {
-              toValue: 1,
-              duration: 1005
-          })
-        ).start();
-
-        StatusBar.setBarStyle('light-content');
-    }
-
-    render() {
-        const rotationStyle:any = { transform: [{
-            rotate: this.imageAnimation.interpolate({
-                inputRange: [0, 1],
-                outputRange: ['0deg', '360deg']
-            })
-        }] };
-
-        return (
-            <View style={styles.app}>
-                <View style={styles.appHeader}>
-                    <Animated.Image
-                        style={[styles.headerImage, rotationStyle]}
-                        resizeMode={'contain'}
-                        source={require('./assets/react-logo.png')}
-                    />
-                    <Text style={styles.appTitle}>Welcome to React Native Web️</Text>
-                </View>
-                <Text style={styles.appIntro}>
-                    To get started, edit src/App.js and save to reload.
-                </Text>
-            </View>
-        )
-    }
+// With addNavigationHelpers we are overriding the navigation property of
+// TabNavigator.
+class AppWithNavigation extends React.Component<Props, void> {
+  render() {
+    return (
+      <TabNavigator
+        navigation={addNavigationHelpers({
+          dispatch: this.props.dispatch,
+          state: this.props.nav,
+          addListener,
+        })}
+      />
+    );
+  }
 }
 
-const styles = StyleSheet.create({
-    app: {
-        flex: 1
-    },
-    appHeader: {
-        flex: 1,
-        backgroundColor: '#222',
-        padding: 20,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    headerImage: {
-        width: 200,
-        height: 200,
-        flex: 3
-    },
-    appTitle: {
-        flex: 1,
-        fontSize: 16,
-        color: 'white'
-    },
-    appIntro: {
-        flex: 3,
-        fontSize: 30,
-        textAlign: 'center'
-    }
-})
+const mapStateToProps:MapStateToProps<*, *, *> = (state) => ({
+  nav: state.nav
+});
+
+// Connect creates a new component with stat mapped to Props
+const AppWithNavigationState = connect(mapStateToProps)(AppWithNavigation);
+
+// New store created with the React-navigation middleware
+const store:Object = getStore(navReducer, middleware);
+
+// Provider passes store to all the components with connect in the heirarchy below it.
+export default function App() {
+  return (
+    <Provider store={store}>
+      <AppWithNavigationState />
+    </Provider>
+  );
+}

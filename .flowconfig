@@ -42,6 +42,7 @@
 <PROJECT_ROOT>/node_modules/radium/.*
 <PROJECT_ROOT>/node_modules/react-native-web/.*
 <PROJECT_ROOT>/node_modules/react-scripts/.*
+<PROJECT_ROOT>/node_modules/react-navigation-redux-helpers/.*
 
 [include]
 

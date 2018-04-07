@@ -32,6 +32,10 @@ Note: If you get `version mismatch error` while using `yarn ios`. Just perform `
 of react-native. After this you can normally perform `yarn ios`. It will work like a charm.
 Note: `yarn eject` will surface all the dependencies files like Webpack, babel, ESlint etc. This is present in the CRA, as CRA creators wanted developers to have full control over configurations. Eject should be used only if needed. **This is one way operation. Once you `eject`, you can't go back.**
 
+## Naming Conventions
+1. Use PascalCase for component names.
+2. All folders will be in camelCase.
+
 ### References
 
 - [React Native Web by Nicolas Gallagher](https://github.com/necolas)
