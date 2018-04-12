@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import Consultations from '../../containers/Consultations/Consultations'
+import Consultations from '../../containers/Consultations/Consultations';
 
 export default StackNavigator(
   {
@@ -22,5 +21,5 @@ export default StackNavigator(
         fontWeight: 'bold',
       },
     },
-  }
+  },
 );

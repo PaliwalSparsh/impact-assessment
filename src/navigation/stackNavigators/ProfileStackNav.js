@@ -1,13 +1,12 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import Profile from '../../containers/Profile/Profile'
+import Profile from '../../containers/Profile/Profile';
 
 export default StackNavigator(
   {
     Profile: {
       screen: Profile,
-    }
+    },
   },
   {
     initialRouteName: 'Profile',
@@ -22,5 +21,5 @@ export default StackNavigator(
         fontWeight: 'bold',
       },
     },
-  }
+  },
 );

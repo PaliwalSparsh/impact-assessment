@@ -10,7 +10,7 @@
 //   ReactDOM.unmountComponentAtNode(div);
 // });
 
-it('need to write test', ()=> {
+it('need to write test', () => {
   const a = 1;
   expect(a).toBe(1);
 });
