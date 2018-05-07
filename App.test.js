@@ -1,7 +1,8 @@
 import React from 'react';
+import renderer from 'react-test-renderer';
+
 import NativeApp from './App';
 
-import renderer from 'react-test-renderer';
 
 it('renders without crashing', () => {
     const rendered = renderer.create(<NativeApp />).toJSON();

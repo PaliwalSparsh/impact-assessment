@@ -13,8 +13,8 @@ export default StackNavigator(
     /* The header config from HomeScreen is now here */
     navigationOptions: {
       headerStyle: {
-        backgroundColor: 'gray',
-        elevation: 0,
+        backgroundColor: '#242730',
+        elevation: 2,
       },
       headerTintColor: '#fff',
       headerTitleStyle: {
