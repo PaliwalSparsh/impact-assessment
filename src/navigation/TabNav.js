@@ -11,8 +11,8 @@ export default TabNavigator(Routes, {
       let tabName: string;
       if (routeName === 'Home') {
         tabName = 'Home';
-      } else if (routeName === 'Consultations') {
-        tabName = 'Consult';
+      } else if (routeName === 'Maps') {
+        tabName = 'Maps';
       } else if (routeName === 'Profile') {
         tabName = 'Profile';
       }
@@ -26,7 +26,7 @@ export default TabNavigator(Routes, {
     },
   }),
   tabBarOptions: {
-    activeTintColor: 'tomato',
+    activeTintColor: 'black',
     inactiveTintColor: 'gray',
   },
   tabBarComponent: TabBarBottom,

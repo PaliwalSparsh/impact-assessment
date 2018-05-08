@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is cross platform app for docstat using react-native and react-native-web.
+This is cross platform app for impact assessment using react-native and react-native-web.
 
 It is bootstrapped with [Create React App](https://github.com/facebook/create-react-app) so you can run `yarn web` in order to start up the development web server with all the hot reloading goodness you've come to expect.
 

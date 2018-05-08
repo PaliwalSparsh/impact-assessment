@@ -1,5 +1,13 @@
 {
-    "expo": {
-      "sdkVersion": "25.0.0"
-    }
-  }
+	"expo": {
+		"sdkVersion": "25.0.0"
+	},
+	"android": {
+		"package": "com.impactassessment",
+		"config": {
+			"googleMaps": {
+				"apiKey": "AIzaSyDrHn36TnAQZ5yTEuvBPpjWRXfkOMP4WIo"
+			}
+		}
+	}
+}

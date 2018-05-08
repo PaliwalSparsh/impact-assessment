@@ -1,5 +1,8 @@
 {
-  "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 17924,
+  "expoServerNgrokUrl": "https://2a-jge.discoman.impact-assessment.exp.direct",
+  "packagerNgrokUrl": "https://packager.2a-jge.discoman.impact-assessment.exp.direct",
+  "ngrokPid": 18452
 }
