@@ -1,7 +1,7 @@
 const DSColors = {
-  primary: '#242730',
-  primaryLight: '',
-  secondary: '#ee7c22',
+  primary: '#107869',
+  primaryLight: '#5cd85a',
+  secondary: '#08313a',
   secondaryLight: '#f8dbc4',
   bannerYellow: '#fff9d2',
   bannerGreen: '#e6ffde',

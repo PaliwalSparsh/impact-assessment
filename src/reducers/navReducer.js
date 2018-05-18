@@ -1,7 +1,7 @@
 import TabNavigator from '../navigation/TabNav';
 
 const initialState: Object = TabNavigator.router.getStateForAction(
-  TabNavigator.router.getActionForPathAndParams('Home'),
+  TabNavigator.router.getActionForPathAndParams('Services'),
 );
 
 export default function(state: Object = initialState, action): Object {

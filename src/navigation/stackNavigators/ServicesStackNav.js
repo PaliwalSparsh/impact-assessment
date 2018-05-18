@@ -1,22 +1,23 @@
 import * as React from 'react';
 import { StackNavigator } from 'react-navigation';
-import Home from '../../containers/Home/Home';
+import Services from '../../containers/Services/Services';
+import DSColors from '../../constants/DSColors';
 
 export default StackNavigator(
   {
-    Home: {
-      screen: Home,
+    Services: {
+      screen: Services,
     },
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Services',
     /* The header config from HomeScreen is now here */
     navigationOptions: {
       headerStyle: {
-        backgroundColor: '#242730',
-        elevation: 2,
+        backgroundColor: DSColors.primary,
+        elevation: 0,
       },
-      headerTintColor: '#fff',
+      headerTintColor: DSColors.white,
       headerTitleStyle: {
         fontWeight: 'bold',
       },

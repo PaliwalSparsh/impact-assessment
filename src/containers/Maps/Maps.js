@@ -8,7 +8,7 @@ import { Card, ListItem, Button, Icon } from 'react-native-elements';
 
 type Props = {};
 
-class Consultations extends React.Component<Props, void> {
+class Maps extends React.Component<Props, void> {
 	constructor(props: Props) {
 		super(props);
 	}
@@ -19,15 +19,14 @@ class Consultations extends React.Component<Props, void> {
 				<MapView
 					style={styles.map}
 					initialRegion={{
-						latitude: 37.78825,
-						longitude: -122.4324,
+						latitude: 61.92,
+						longitude:  25.74,
 						latitudeDelta: 0.0922,
 						longitudeDelta: 0.0421,
 					}}
 				>
           <MapView.UrlTile
-            urlTemplate={'https://b.tile.openstreetmap.org/{z}/{x}/{y}.png'}
-            maximumZ={19}
+            urlTemplate={'http://859e061a.ngrok.io/{z}/{x}/{y}.png'}
           />
         </MapView>
 				<Button
@@ -67,4 +66,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default Consultations;
+export default Maps;

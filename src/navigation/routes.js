@@ -1,11 +1,11 @@
-import HomeStackNav from './stackNavigators/HomeStackNav';
+import ServicesStackNav from './stackNavigators/ServicesStackNav';
 import MapsStackNav from './stackNavigators/MapsStackNav';
-import ProfileStackNav from './stackNavigators/ProfileStackNav';
+import CompareStackNav from './stackNavigators/CompareStackNav';
 
 const Routes = {
-  Home: { screen: HomeStackNav },
+  Services: { screen: ServicesStackNav },
   Maps: { screen: MapsStackNav },
-  Profile: { screen: ProfileStackNav },
+  Compare: { screen: CompareStackNav },
 };
 
 export default Routes;
